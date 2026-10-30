@@ -15,11 +15,13 @@ public class PolizaService {
 
     private final PolizaRepository polizaRepository;
 
-    public PolizaService(PolizaRepository polizaRepository) {
+    public PolizaService(PolizaRepository polizaRepository) 
+    {
         this.polizaRepository = polizaRepository;
     }
 
-    public List<Poliza> listar(String tipo, String estado) {
+    public List<Poliza> listar(String tipo, String estado) 
+    {
         if (tipo != null && estado != null) {
             return polizaRepository.findByTipoAndEstado(tipo, estado);
         }
@@ -35,7 +37,8 @@ public class PolizaService {
         return polizaRepository.findAll();
     }
 
-    public Poliza buscarPorId(Long id) {
+    public Poliza buscarPorId(Long id) 
+    {
         return polizaRepository.findById(id)
                 .orElseThrow(() ->
                         new RecursoNoEncontradoException(
@@ -43,7 +46,8 @@ public class PolizaService {
     }
 
     @Transactional
-    public Poliza renovar(Long id) {
+    public Poliza renovar(Long id) 
+    {
         Poliza poliza = buscarPorId(id);
 
         if ("CANCELADA".equalsIgnoreCase(poliza.getEstado())) {
@@ -63,7 +67,8 @@ public class PolizaService {
     }
 
     @Transactional
-    public Poliza cancelar(Long id) {
+    public Poliza cancelar(Long id) 
+    {
         Poliza poliza = buscarPorId(id);
 
         poliza.setEstado("CANCELADA");

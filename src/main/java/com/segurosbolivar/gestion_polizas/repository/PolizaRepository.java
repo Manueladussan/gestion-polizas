@@ -1,4 +1,3 @@
-
 package com.segurosbolivar.gestion_polizas.repository;
 
 import com.segurosbolivar.gestion_polizas.entity.Poliza;

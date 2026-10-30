@@ -16,7 +16,8 @@ public class RiesgoOperacionController {
     }
 
     @PostMapping("/{id}/cancelar")
-    public Riesgo cancelar(@PathVariable Long id) {
+    public Riesgo cancelar(@PathVariable Long id) 
+    {
         return riesgoService.cancelar(id);
     }
 }

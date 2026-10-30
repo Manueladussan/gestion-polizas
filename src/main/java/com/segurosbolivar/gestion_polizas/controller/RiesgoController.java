@@ -24,7 +24,8 @@ public class RiesgoController {
     }
 
     @GetMapping("/{id}/riesgos")
-    public List<Riesgo> listarPorPoliza(@PathVariable Long id) {
+    public List<Riesgo> listarPorPoliza(@PathVariable Long id) 
+    {
         polizaService.buscarPorId(id);
         return riesgoService.listarPorPoliza(id);
     }

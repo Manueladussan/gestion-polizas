@@ -1,4 +1,3 @@
-
 package com.segurosbolivar.gestion_polizas.service;
 
 import com.segurosbolivar.gestion_polizas.entity.Poliza;
@@ -24,12 +23,14 @@ public class RiesgoService {
         this.polizaRepository = polizaRepository;
     }
 
-    public List<Riesgo> listarPorPoliza(Long polizaId) {
+    public List<Riesgo> listarPorPoliza(Long polizaId) 
+    {
         return riesgoRepository.findByPolizaId(polizaId);
     }
 
     @Transactional
-    public Riesgo agregar(Long polizaId, String descripcion) {
+    public Riesgo agregar(Long polizaId, String descripcion) 
+    {
         Poliza poliza = polizaRepository.findById(polizaId)
                 .orElseThrow(() ->
                         new RecursoNoEncontradoException(
@@ -55,7 +56,8 @@ public class RiesgoService {
     }
 
     @Transactional
-    public Riesgo cancelar(Long riesgoId) {
+    public Riesgo cancelar(Long riesgoId) 
+    {
         Riesgo riesgo = riesgoRepository.findById(riesgoId)
                 .orElseThrow(() ->
                         new RecursoNoEncontradoException(

@@ -1,4 +1,3 @@
-
 package com.segurosbolivar.gestion_polizas.exception;
 
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,3 @@
-
 package com.segurosbolivar.gestion_polizas.entity;
 
 import jakarta.persistence.*;

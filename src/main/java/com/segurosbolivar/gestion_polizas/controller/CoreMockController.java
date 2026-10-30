@@ -9,19 +9,18 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/core-mock")
-public class CoreMockController {
+public class CoreMockController{
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(CoreMockController.class);
+        private static final Logger logger =
+                LoggerFactory.getLogger(CoreMockController.class);
 
-    @PostMapping("/evento")
-    public ResponseEntity<Map<String, String>> recibirEvento(
-            @RequestBody Map<String, Object> evento) {
+        @PostMapping("/evento")
+        public ResponseEntity<Map<String, String>> recibirEvento(@RequestBody Map<String, Object> evento) 
+        {
+                logger.info("Intento de envío de evento a CORE: {}", evento);
 
-        logger.info("Intento de envío de evento a CORE: {}", evento);
-
-        return ResponseEntity.ok(Map.of(
-                "mensaje", "Evento recibido por el CORE simulado"
-        ));
-    }
+                return ResponseEntity.ok(Map.of(
+                        "mensaje", "Evento recibido por el CORE simulado"
+                ));
+        }
 }

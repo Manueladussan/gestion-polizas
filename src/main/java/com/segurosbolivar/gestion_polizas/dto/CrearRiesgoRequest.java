@@ -1,4 +1,3 @@
-
 package com.segurosbolivar.gestion_polizas.dto;
 
 import jakarta.validation.constraints.NotBlank;
